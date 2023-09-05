@@ -1,0 +1,51 @@
+def InputReadings():
+    reading_list=[]
+    while True:
+        reading=input("Exter reading values or enter x for finishing:\n")
+        if reading=="x":
+            return reading_list
+            break
+        else:
+            reading_list.append(int(reading))
+            
+            
+            
+
+
+def CalculateAvg(readings):
+    total=0
+    num_readings=len(readings)
+    for i in readings:
+        total+=i
+    avg=round(total/num_readings,1)
+    return avg
+    
+again_options=["y","n"]
+    
+while True:
+
+    readings=InputReadings()
+    
+    mean=CalculateAvg(readings)
+    
+    print(mean)
+    
+    again=input("More readings?(y/n)")
+    
+    if again not in again_options:
+        while True:
+            again=input("Sorry, input can be only y or n")
+            if again=="y":
+                break
+            elif again=="n":
+                break
+            else:
+                continue
+    
+    if again =="y":
+        continue
+    
+    elif again=="n":
+        break
+    
+            
